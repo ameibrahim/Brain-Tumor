@@ -4,3 +4,6 @@ numpy==1.25.2
 opencv_python==4.7.0.72
 tensorflow==2.15.0
 tensorflow_macos==2.15.0
+
+
+waitress-serve --port=3033 --url-scheme=http prediction:wsgifunc

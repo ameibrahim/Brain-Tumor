@@ -143,7 +143,7 @@ async function detectWithImageName(imageName){
 
     console.log(imageName);
 
-    let url = `http://127.0.0.1:5000/predict/?imageName=${imageName}`
+    let url = `http://braintumor.aiiot.live:3033/predict/?imageName=${imageName}`
 
     try {
         let result = await fetch(url, { method: 'GET' });
