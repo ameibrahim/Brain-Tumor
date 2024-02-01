@@ -1,0 +1,273 @@
+*,
+*::after,
+*::before{
+    margin: 0 0;
+    padding: 0 0;
+    font-family: Avenir Next;
+    box-sizing: border-box;
+}
+
+:root{
+    --accent: #630FFE;
+}
+
+.background {
+    position: absolute;
+    z-index: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.white-box{
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    top: 0px;
+    background: white;
+    z-index: 1;
+    opacity: 0.78;
+}
+
+.background img{
+    height: 100%;
+    min-width: 100%;
+    z-index: 0;
+}
+
+body {
+    background: white;
+    height: 100vh;
+    width: 200vw;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    overflow: hidden;
+}
+
+.menubar-container {
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    bottom: 0px;
+    display: grid;
+    justify-items: center;
+    align-items: start;
+    z-index: 10;
+}
+
+.menubar {
+    width: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    transform: scale(0.9);
+    transition: 0.5s;
+    box-shadow: rgba(168, 158, 255) 0px 10px 36px 0px, rgba(168, 158, 255, 1) 0px 0px 0px 1px; 
+}
+
+.menubar:hover{ transform: scale(1.13);}
+
+.menu-item {
+    background-color: var(--accent);
+    color: white;
+    padding: 1em 2em;
+    transition: 0.3s all;
+    cursor: pointer;
+    border-right: 1px solid rgb(166, 151, 222);
+}
+.menu-item:last-child{ border-right: none;}
+
+.menu-item:hover, .menu-item.active {
+    color: var(--accent);
+    background: white;
+}
+
+.horizontal-container{
+    height: calc(100% - 100px);
+    display: grid;
+    position: relative;
+    align-items: center;
+    transition: 1.3s all;
+    left: 0%;
+}
+
+.large-title-container {
+    padding: 50px;
+    display: grid;
+    place-items: center;
+}
+
+.image-upload-container {
+    padding: 50px;
+}
+
+.outer-container {
+    display: grid;
+    grid-gap: 50px;
+    place-items: center;
+    position: relative;
+}
+
+h1 {
+    font-size: calc(14ch - 15px);
+    color: var(--accent);
+    text-shadow: 0px 0px 1px #000;
+    max-width: 10ch;
+    text-align: center;
+}
+
+.image-container { 
+    display: grid;
+    position: relative;
+    width: 60%;
+    aspect-ratio: 1/1;
+    border: 3px dashed var(--accent);
+    border-radius: 5px;
+    place-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 1.3s all;
+    background-color: #EFE8FE;
+}
+
+.image-container:hover {
+    transition: 0.8s;
+    background-color: #CBB5FE;
+}
+
+.image-container > p {
+    font-size: 1.3em;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    padding: 30px;
+}
+
+.image-container > img {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    min-width: 100%;
+    border: none;
+}
+
+#imageUpload{
+    display: none;
+}
+
+.button {
+    background-color: var(--accent);
+    padding: 1em 2.5em;
+    color: white;
+    font-size: 1.13em;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.restart-button{ 
+    background-color: #b89bfb;
+}
+
+.results.button-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 15px;
+    margin-top: 10px;
+}
+
+.results {
+    display: grid;
+    justify-items: start;
+    align-items: center;
+    place-self: center;
+    padding: 50px;
+    grid-gap: 20px;
+}
+
+.tumor-result {
+    margin-top: 5px;
+}
+
+.results > * {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 3px;
+}
+
+.results > * > p {
+    font-weight: bolder; 
+}
+
+.results > * > p:last-child {
+    color: var(--accent);
+} 
+
+.checklist-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.indicator {
+    display: grid;
+    position: relative;
+    align-items: center;
+}
+
+.checkmark {
+    display: grid;
+    position: absolute;
+    height: 27px;
+    width: 27px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0;
+    transition: 1s;
+}
+
+.checkmark img {
+    height: 13px;
+    place-self: center;
+}
+
+.checklist-text {
+    font-weight: 400;
+    color: var(--accent);
+    text-shadow: 0px 0px 20px #b89bfb;
+    font-size: 1.2em;
+}
+
+.loader-waiting {
+    height: 30px;
+    width: 30px;
+    border: 1px dashed var(--accent);
+    border-radius: 50%;
+}
+
+.page {
+    position: absolute;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #ffffff;
+    z-index: 9;
+    top: 100vh;
+    transition: 0.75s all;
+    display: grid;
+}
+
+.large-title{
+    max-width: 400px;
+    font-size: 6em;
+    color: var(--accent);
+    text-align: start;
+}
+
+.page p {
+    font-size: 1.3em;
+    color: auto;
+}

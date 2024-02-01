@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="stylesheet" href="education.css">
+
+    <script src="animation.js" defer></script>
+    <script src="CheckListItem.js"></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <div class="background">
+        <img src="background.jpg" alt="">
+        <div class="white-box"></div>
+    </div>
+
+    <div class="menubar-container">
+        <div class="menubar">
+            <div class="menu-item" id="predictor-link" onclick="goToPredictor()">Predictor</div>
+            <div class="menu-item" id="education-link" onclick="slideEducationPage()">Education</div>
+            <div class="menu-item" id="past-predictions-link">Past Predictions</div>
+        </div>
+    </div>
+
+    <div class="horizontal-container large-title-container">
+        <h1>Brain Tumor Detection</h1>
+        <div class="button" onclick="goToPredictor()">Go</div>
+    </div>
+
+    <div class="horizontal-container image-upload-container">
+        <form class="outer-container">
+            <label for="imageUpload" class="image-container">
+                <p>Click to upload an MRI Image</p>
+                <input 
+                type="file"
+                id="imageUpload"
+                accept="image/*"
+                onchange="loadFile(event)"
+                >
+                <img class="image-placeholder" src="" alt="">
+            </label>
+    
+            <div class="button detection-button" onclick="startDetection();">Start Detection</div>
+        </form>
+    </div>
+
+    <div class="horizontal-container final-result-container">
+        <div class="results">
+        </div>
+    </div>
+
+    <div class="page education-page">        
+        <div class="outer-content-container">
+
+            <h1 class="large-title">Tumor Detection</h1>
+
+            <h2 class="glossy-title">Greetings!</h2>
+
+            <div class="content-container">
+                <div class="intro-text">
+                    <div class="side-title">
+                        Brain Tumors Overview
+                    </div>
+                    
+                    <p>
+                        A tumor is caused by uncontrolled growth and abnormal spread of body cells that can result in death if not treated. Normally, cells multiply and die in an orderly way to be replaced by new cells. However, abnormal growth can keep happening to form a mass or a lump called a tumor. According to the Centers for Disease Control and Prevention, cancer is the second most frequent cause of mortality after heart disease. The American Cancer Society reported 2022 an estimated number of 18.280 deaths versus 25.050 new cases of brain and other nervous system cancer.                                              
+                        In both adults and children, brain tumors are one of the most fatal and threatening cancers. Moreover, they have the lowest survival rate. Consequently, early diagnosis has an important role in preventing more spread of the tumor and identification of the right treatment plan. Examining Magnetic Resonance Imaging (MRI) images of the brain with tumors is an effective technique to distinguish brain tumors which is a difficult process even for a professional oncologist or a neurosurgeon which means that any tiny human error in the diagnosis will lead to undesirable consequences.  Notably, the number of brain tumor cases is increasing gradually which makes manual techniques tedious, time-consuming, and erroneous.
+                        MRI is well-known for effectively finding some cancers like breast, brain, and spinal cord tumours. Using MRI, medical professionals can tell sometimes if a tumor is or is not cancerous. Furthermore, it helps plan treatment such as surgeries or radiotherapy (American Cancer Society, 2021).
+                        Brain tumor diagnosis begins usually with MRI scans. When the MRI shows that the brain has a tumor then professionals head towards further investigations for example performing a biopsy procedure or surgery depending on the tumor type and severity of the patient's condition (Cancer.Net, 2019).    
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-container two-column-grid">
+                <div>
+                    <div class="block-text">
+                        <div class="side-title">
+                            Risk Factors
+                        </div>
+                        
+                        <p>
+                            There exist multiple reasons why an individual may be more susceptible to having a brain tumor, and there are also elements that can raise that risk. Notably, many individuals with brain tumors have no recognized risk factors, thus even if these characteristics may be linked to an increased risk, they do not ensure the development of a brain tumor. As potential risk factors for brain tumors, the following variables have been identified:
+                        </p>
+                    </div>
+        
+                    <div class="block-text">
+                        <div class="side-title">
+                            Age
+                        </div>
+                        
+                        <p>
+                            As humans age, there is an increased chance of brain tumors. While medulloblastomas are more common in children, certain types of brain tumors, like gliomas, are more common in adults.        
+                        </p>
+                    </div>
+        
+                    <div class="block-text">
+                        <div class="side-title">
+                            Family History
+                        </div>
+                        
+                        <p>
+                            People may be more at risk if there is a family history of brain tumors. Brain tumor development is correlated with several hereditary diseases, including neurofibromatosis, tuberous sclerosis, and Li-Fraumeni syndrome.    
+                        </p>
+                    </div>
+                </div>
+    
+                <div>
+                    <div class="block-text">
+                        <div class="side-title">
+                            Radiation exposure
+                        </div>
+                        
+                        <p>
+                            It is well established that exposure to ionizing radiation, particularly during early life, increases the chance of brain tumor development. This can involve radiation treatment for different types of cancer, occupational radiation exposure, or radiation exposure from other sources.
+                        </p>
+                    </div>
+        
+                    <div class="block-text">
+                        <div class="side-title">
+                            Genetic factors
+                        </div>
+                        
+                        <p>
+                            Certain hereditary genetic mutations have been linked to a higher risk of brain tumors. These genetic variables may be connected to particular kinds of brain tumors.
+                        </p>
+                    </div>
+        
+                    <div class="block-text">
+                        <div class="side-title">
+                            Immune system disorders
+                        </div>
+                        
+                        <p>
+                            HIV/AIDS and other immune-system-related illnesses may increase the risk of certain brain tumors.
+                        </p>
+                    </div>
+        
+                    <div class="block-text">
+                        <div class="side-title">
+                            Environmental factors
+                        </div>
+                        
+                        <p>
+                            There may be a link between an elevated risk of brain tumors and exposure to specific chemicals or poisons in the environment. The precise factors aren't usually clear-cut, though.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-container">
+                <div class="intro-text">
+                    <div class="side-title">
+                        Prevention Tips
+                    </div>
+                    
+                    <p>
+                        Although brain tumors cannot be completely avoided, there are lifestyle factors and behaviors that can improve general health and lower the risk of getting brain tumors or cancers. It's important to note that these tips are general guidelines, and individual cases may vary. Here are some ideas that could lower the risk:
+                    </p>
+                </div>
+    
+                <div class="two-column-grid">
+                    <div>
+                        <div class="block-box">
+                            <div class="medium-title">
+                                A healthy life style
+                            </div>
+                            
+                            <p>
+                                Maintain a healthy diet that is high in fruits, vegetables, and whole grains.
+                                By engaging in regular exercise and physical activity, you can maintain a healthy weight.
+                                Red meats, processed foods, and sugary drinks should be consumed in moderation.
+                            </p>
+                        </div>
+            
+                        <div class="block-box">
+                            <div class="medium-title">
+                                Protective headgear
+                            </div>
+                            
+                            <p>
+                                Wearing helmets and other suitable head protection is advised when engaging in activities that increase the risk of head injuries, such as skating, cycling, or contact sports.
+                            </p>
+                        </div>
+            
+                        <div class="block-box">
+                            <div class="medium-title">
+                                Occupational safety
+                            </div>
+                            
+                            <p>
+                                Wearing helmets and other suitable head protection is advised when engaging in activities that increase the risk of head injuries, such as skating, cycling, or contact sports.
+                            </p>
+                        </div>
+            
+                        <div class="block-box">
+                            <div class="medium-title">
+                                Avoid exposure to harmful substances
+                            </div>
+                            
+                            <p>
+                                Reduce your exposure to solvents, insecticides, and other potentially dangerous chemicals in both your home and workplace.
+                            </p>
+                        </div>
+            
+                        <div class="block-box">
+                            <div class="medium-title">
+                                Reduce exposure to radiation
+                            </div>
+                            <p>
+                                Take care when you are exposed to ionizing radiation, particularly in medical environments. Talk to your healthcare practitioner about the need for and possible hazards associated with any diagnostic imaging treatments.
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div>
+                        <div class="block-box">
+                            <div class="medium-title">
+                                Handle medical diseases
+                            </div>
+                            <p>
+                                Since high blood pressure and diabetes can raise the risk of developing some types of cancers, it's important to manage these disorders.
+                            </p>
+                        </div>
+            
+                        <div class="block-box">
+                            <div class="medium-title">
+                                Regular medical examinations
+                            </div>
+                            <p>
+                                Keep an eye on your general health by scheduling regular checkups and talking to your healthcare practitioner about any concerns you may have.
+                            </p>
+                        </div>
+            
+                        <div class="block-box">
+                            <div class="medium-title">
+                                Genetic counseling
+                            </div>
+                            <p>
+                                To understand potential dangers and suitable preventative steps, consider genetic counseling if you have a family history of brain tumors or genetic diseases associated with an increased risk.
+                            </p>
+                        </div>
+            
+                        <div class="block-box">
+                            <div class="medium-title">
+                                Give up smoking and cut back on alcohol
+                            </div>
+                            <p>
+                                Studies have shown a connection between smoking and heavy alcohol use and a higher risk of several malignancies, including brain tumors. Reducing alcohol use and giving up smoking can improve general health.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="content-container">
+                <div class="intro-text">
+                    <div class="side-title">
+                        Brain-healthy habits
+                    </div>
+                    
+                    <p>
+                        Take part in mental exercises and puzzles to keep your mind sharp. 
+                        You can also engage in other activities that support brain health.
+                        For optimal brain function and general health, adequate sleep is necessary. Aim for 7 to 9 hours of good sleep every night.
+                    </p>
+
+                    <p>
+                        It's important to keep in mind that while following these suggestions may improve general health, brain tumor prevention is not a garanteed. Effective health management requires routine check-ups, early detection, and quick medical intervention if you suffer abnormal symptoms. Seek professional advice and support from a healthcare expert if you are concerned about your health or risk factors.
+                    </p>
+
+                    <p>
+                        <b class="intro-text">Why early detection matters?</b>
+                        <p>Early detection of brain tumors is crucial for several reasons:</p>
+                    </p>
+                </div>
+    
+                <div class="two-column-grid spacey">
+                    <div>
+                        <div class="block-box multicolour">
+                            <div class="medium-title">
+                                Improved Treatment Options
+                            </div>
+                            
+                            <p>
+                                Early detection allows for a wider range of treatment options, including more successful surgical removal.
+                            </p>
+                        </div>
+
+                        <div class="block-box multicolour">
+                            <div class="medium-title">
+                                Better Prognosis
+                            </div>
+                            
+                            <p>
+                                Detecting tumors early leads to a more favorable prognosis, influencing treatment success.
+                            </p>
+                        </div>
+
+                        <div class="block-box multicolour">
+                            <div class="medium-title">
+                                Reduced Treatment Intensity
+                            </div>
+                            
+                            <p>
+                                Early-stage tumors may require less aggressive treatment, reducing the risk of complications.
+                            </p>
+                        </div>
+
+                        <div class="block-box multicolour">
+                            <div class="medium-title">
+                                Preservation of Brain Functions
+                            </div>
+                            
+                            <p>
+                                Early intervention helps preserve brain functions by minimizing damage to surrounding tissue.
+                            </p>
+                        </div>
+
+                        <div class="block-box multicolour">
+                            <div class="medium-title">
+                                Preservation of Brain Functions
+                            </div>
+                            
+                            <p>
+                                Early intervention helps preserve brain functions by minimizing damage to surrounding tissue.
+                            </p>
+                        </div> 
+                    </div>
+        
+                    
+                </div>
+            </div>
+        </div>
+
+
+
+            <!-- Brain-healthy habits: 
+            Take part in mental exercises and puzzles to keep your mind sharp. 
+            You can also engage in other activities that support brain health.
+            For optimal brain function and general health, adequate sleep is necessary. Aim for 7 to 9 hours of good sleep every night.
+            
+            It's important to keep in mind that while following these suggestions may improve general health, brain tumor prevention is not a garanteed. Effective health management requires routine check-ups, early detection, and quick medical intervention if you suffer abnormal symptoms. Seek professional advice and support from a healthcare expert if you are concerned about your health or risk factors.
+            
+            Why early detection matters?
+            Early detection of brain tumors is crucial for several reasons:
+            
+            Improved Treatment Options: 
+            Early detection allows for a wider range of treatment options, including more successful surgical removal.
+            
+            Better Prognosis: 
+            Detecting tumors early leads to a more favorable prognosis, influencing treatment success.
+            
+            Reduced Treatment Intensity: 
+            Early-stage tumors may require less aggressive treatment, reducing the risk of complications.
+            
+            Preservation of Brain Functions:
+            Early intervention helps preserve brain functions by minimizing damage to surrounding tissue.
+            
+            Prevention of Complications: 
+            Early treatment can prevent complications such as increased intracranial pressure and neurological deficits.
+            
+            Enhanced Quality of Life: 
+            Timely diagnosis and treatment improve overall quality of life by maintaining independence and cognitive function.
+            
+            Personalized Treatment Planning: 
+            Early detection allows for personalized treatment plans related to individual characteristics and health.
+            
+            Monitoring and Follow-ups: 
+            Regular monitoring and follow-ups care help assess treatment effectiveness and address emerging issues promptly.
+            
+            Patient and Family Preparation:
+            Early knowledge of the diagnosis provides time for understanding, exploring treatment options, and making informed decisions.
+            
+            Research and Clinical Trials: 
+            Early detection facilitates participation in research studies, contributing to advancements in understanding and treatment.
+            
+            
+            The development and use of a brain tumor detection application can offer several benefits in the field of healthcare and medical diagnostics. Here are some potential advantages:
+            
+            Early Detection and Diagnosis:
+            Our application can assist you in early detection of brain tumors, enabling prompt medical intervention and improving treatment outcomes.
+            
+            Improved Accuracy:
+            Utilizing advanced algorithms and deep learning, our application can enhance the accuracy of diagnoses, reducing the likelihood of false positives and false negatives.
+            
+            Faster Diagnosis:
+            Automated analysis through our application can significantly reduce the time required for tumor detection, allowing for quicker decision-making and treatment planning.
+            
+            Accessible Screening:
+            Using our application through a web-based platform, the screening process is more accessible, reaching a broader population and potentially facilitating early detection in remote or underserved areas.
+            
+            Cost-Effective Screening:
+            Automated detection through our application is a cost-effective alternative to traditional diagnostic methods, making screening more widely available.
+            
+            Patient Empowerment:
+            Patients can use the application to monitor their health, understand potential risks, and engage in proactive healthcare and well-being management.
+            
+            Education and Awareness:
+            Our application can serve as an educational tool, raising awareness about brain tumors, symptoms, and the importance of early detection.
+            
+            Future possible Improvements:
+            
+            Increased Efficiency for Healthcare Professionals:
+            
+            Our application can assist healthcare professionals by automating certain aspects of the diagnostic process, allowing them to focus on more complex cases and providing more efficient patient care.
+            
+            Integration with Imaging Technologies:
+            
+            Integration with imaging technologies, such as MRI or CT scans, can enhance the application's ability to analyze and detect brain tumors accurately.
+            
+            Remote Consultations:
+            Our application can facilitate remote consultations between healthcare providers, allowing for collaborative decision-making and sharing of diagnostic information.
+            
+            Data-driven Insights:
+            Our application can generate valuable data insights over time, contributing to research and understanding patterns in brain tumor occurrences, responses to treatments, and outcomes.
+            
+            Streamlined Referral Processes:
+            Our application can streamline the referral process, facilitating communication between primary care physicians and specialists for timely consultations and interventions.
+             -->
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+.education-page {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+}
+
+.outer-content-container {
+    display: grid;
+    grid-gap: 50px;
+    overflow: scroll;
+    height: 100%;
+    padding: 100px;
+}
+
+.content-container, .content-container > div{
+    display: grid;
+    grid-gap: 40px;
+}
+
+.two-column-grid{
+    grid-template-columns: 1fr 1fr;
+}
+
+.intro-text{
+    display: grid;
+    grid-gap: 20px;
+    text-align: center;
+}
+
+.glossy-title {
+    color: var(--accent);
+    font-weight: 100;
+    font-size: 2.5em;
+}
+
+.intro-text .side-title {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.13em;
+}
+
+.intro-text p{
+    text-align: justify;
+    max-width: 90%;
+    justify-self: center;
+    font-size: 1.4em;
+    line-height: 1.6em;
+    color: var(--accent);
+    font-weight: 300;
+    initial-letter: 6;
+    -webkit-initial-letter: 5;
+}
+
+
+.block-text{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: auto 1fr;
+    border: 1px solid var(--accent);
+    padding: 20px;
+    border-radius: 10px;
+    /* grid-template-columns: auto 1fr; */
+}
+
+.block-text .side-title{
+    color: white;
+    font-weight: 600;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: var(--accent);
+    padding: 0.5em 2em;
+    border-radius: 5px;
+    place-self: start;
+}
+
+.block-text > p {
+    font-size: 0.9em;
+    line-height: 1.3em;
+    align-self: start;
+    color: var(--accent);
+}
+
+.block-box {
+    background-color: var(--accent);
+    color: white;
+    padding: 50px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 20px;
+}
+
+.medium-title {
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    max-width: 10ch;
+    position: relative;
+    align-self: center;
+}
+
+.medium-title:after {
+    content: "";
+    height: 100%;
+    width: 1px;
+    background: white;
+    position: absolute;
+    top: 0px;
+    right: -20px;
+}
+
+.block-box p {
+    font-size: 1em;
+    align-self: center;
+    padding-left: 20px;
+}
+
+.two-column-grid > div {
+    display: grid;
+    grid-gap: 40px;
+}
+
+.block-box.multicolour{
+    background-color: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    padding: 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0,0.06) 0px 0px 0px 1px;
+}
+
+.block-box.multicolour > div {
+    color: var(--accent);
+    padding: 20px;
+    background: white;
+    font-size: 120%;
+}
+
+.block-box.multicolour > p {
+    background-color: var(--accent);
+    color: white;
+    padding: 20px;
+    align-self: end;
+}
+
+.two-column-grid.spacey > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
